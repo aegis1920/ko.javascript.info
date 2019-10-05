@@ -1,10 +1,10 @@
 # Async/await
 
-There's a special syntax to work with promises in a more comfortable fashion, called "async/await". It's surprisingly easy to understand and use.
+편안한 방식으로 promise를 다루는 특별한 구문을 "async/await"이라고 합니다. 이것은 놀랍도록 이해하고 사용하기 쉽습니다.
 
 ## Async functions
 
-Let's start with the `async` keyword. It can be placed before a function, like this:
+`async` 키워드부터 시작하겠습니다. 다음과 같이 함수 앞에 놓을 수 있습니다.
 
 ```js
 async function f() {
@@ -12,9 +12,9 @@ async function f() {
 }
 ```
 
-The word "async" before a function means one simple thing: a function always returns a promise. Other values are wrapped in a resolved promise automatically.
+함수 앞에 "async"라는 단어는 간단한 것을 의미합니다. 함수는 항상 promise를 반환합니다. 다른 값은 자동적으로 resolve된 promise에 wrapping 됩니다.
 
-For instance, this function returns a resolved promise with the result of `1`, let's test it:
+예를 들어, 이 함수는 1의 결과로 resolve된 promise를 반환합니다. 테스트 해보겠습니다.
 
 ```js run
 async function f() {
@@ -24,7 +24,7 @@ async function f() {
 f().then(alert); // 1
 ```
 
-...We could explicitly return a promise, that would be the same:
+...우리는 명시적으로 promise를 반환할 수 있었습니다. 이 함수는 위 함수와 동일합니다.
 
 ```js run
 async function f() {
@@ -34,11 +34,11 @@ async function f() {
 f().then(alert); // 1
 ```
 
-So, `async` ensures that the function returns a promise, and wraps non-promises in it. Simple enough, right? But not only that. There's another keyword, `await`, that works only inside `async` functions, and it's pretty cool.
+따라서 `async`는 promise를 반환하는 것을 보장하며 non-promise를 wrapping합니다. 꽤 간단하지 않나요? 그러나 그것만이 아닙니다. `async`함수 내에서만 작동하는 `await`이라는 키워드도 있습니다. 아주 멋진 키워드입니다.
 
 ## Await
 
-The syntax:
+문법:
 
 ```js
 // works only inside async functions
